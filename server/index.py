@@ -16,7 +16,8 @@ def generate():
    # grab global references to the lock variable
    global lock
    # initialize the video stream
-   vc = cv2.VideoCapture(0)
+   # TODO: allow source configuration
+   vc = cv2.VideoCapture(1)
    
    # check camera is open
    if vc.isOpened():
@@ -47,7 +48,7 @@ def generate():
    vc.release()
 
 if __name__ == '__main__':
-   host = "127.0.0.1"
+   host = "0.0.0.0"
    port = 8000
    debug = False
    options = None
